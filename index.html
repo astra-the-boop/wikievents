@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Wikevents</title>
+</head>
+<script src="index.js"></script>
+<body style="text-align: center; font-family: sans-serif; color: antiquewhite; background-color: black">
+<h1 style="font-size: 70px">Wikevents</h1>
+<input type="date" id="dateinput">
+
+<button id="random" onclick="random()">Random date</button>
+<button id="go" onclick="updateArticle()">Go!</button>
+<img src="earth.png" style="position: absolute; margin-left: -1300px; width: 900px; margin-top: 200px" id="earth">
+<div style="background-color: antiquewhite; border: solid 5px navajowhite; width: 800px; display: block; margin: 20px 200px auto auto">
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Tab1')">by Date</button>
+        <button class="tablinks" onclick="openTab(event, 'Tab2')">by Month</button>
+        <button class="tablinks" onclick="openTab(event, 'Tab3')" id="defaultOpen">by Year</button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="Tab1" class="tabcontent">
+        <iframe src="https://en.wikipedia.org" width="775px" height="900px" id="iframedate"></iframe>
+    </div>
+
+    <div id="Tab2" class="tabcontent">
+        <iframe src="https://en.wikipedia.org" width="775px" height="900px" id="iframemonth"></iframe>
+    </div>
+
+    <div id="Tab3" class="tabcontent">
+        <iframe src="https://en.wikipedia.org" width="775px" height="900px" id="iframeyear"></iframe>
+    </div>
+</div>
+
+</body>
+</html>
