@@ -1,6 +1,6 @@
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 document.getElementById("defaultOpen").click();
-
+var varx = 0;
 var vara = 2025;
 var varb = 2025;
 document.getElementById("Tab3").style.display = "block";
@@ -26,7 +26,9 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 async function updateArticle(){
+    varx += 1;
     let interval1;
+    let interval2;
     console.log(vara);
     console.log(varb);
     const currentDate = new Date();
@@ -61,19 +63,27 @@ async function updateArticle(){
             document.getElementById("iframemonth").src = "https://en.wikipedia.org/wiki/" + months[month-1];
         }
     }
-    document.getElementById("iframedate").src = "https://en.wikipedia.org/wiki/" + day + " " + months[month-1];
+    if(day/10 < 1){
+        document.getElementById("iframedate").src = "https://en.wikipedia.org/wiki/" + day.substring(1,2) + " " + months[month-1];
+    }else{
+        document.getElementById("iframedate").src = "https://en.wikipedia.org/wiki/" + day + " " + months[month-1];
+    }
 
     let x = 0;
     let y = -((varb-vara)*365)/500;
     console.log(varb);
-    interval1 = setInterval(() => {
-        console.log(y);
-        x = x + y;
-        document.getElementById("earth").style.rotate = x + "deg";
-    }, 1);
-    setTimeout(() => {
-        clearInterval(interval1);
-    }, 2000);
+
+        interval1 = setInterval(() => {
+            console.log(y);
+            x = x + y;
+            document.getElementById("earth").style.rotate = x + "deg";
+        }, 1);
+        setTimeout(() => {
+            clearInterval(interval1);
+        }, 2000);
+
+
+    
     vara = year;
 }
 
