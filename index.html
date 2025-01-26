@@ -1,38 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <title>Wikevents</title>
-</head>
+<head><link rel="stylesheet" href="style.css"><meta charset="UTF-8"><title>Wikevents - Wikipedia, by time</title></head>
 <script src="index.js"></script>
 <body style="text-align: center; font-family: sans-serif; color: antiquewhite; background-color: black">
-<h1 style="font-size: 70px">Wikievents</h1>
-<input type="date" id="dateinput">
-
-<button id="random" onclick="random()">Random date</button>
-<button id="go" onclick="updateArticle()">Go!</button>
-<img src="earth.png" style="position: absolute; margin-left: -1300px; width: 900px; margin-top: 200px" id="earth">
+<h1 style="font-size: 70px">Wikievents</h1><h3>Wikipedia, by time</h3>
+<input type="date" id="dateinput" style="min-height: 25px; font-size: 20px">
+<img src="thingy.png" style="position: absolute; margin-top: 650px; image-rendering: pixelated; width: 300px; rotate: 10deg; z-index: -1; margin-left: -250px; pointer-events: none">
+<img src="shadow.png" style="position: absolute; margin-top: 100px; width: 750px; opacity: 70%; margin-left: -1000px;z-index: 3; pointer-events: none">
+<button id="random" onclick="random()" style="min-height: 30px; font-size: 20px">Random date</button>
+<button id="go" onclick="updateArticle()" style="min-height: 30px; font-size: 20px">Go!</button>
+<img src="earth.png" style="position: absolute; margin-left: -1300px; width: 900px; margin-top: 200px; pointer-events: none" id="earth">
 <div style="background-color: antiquewhite; border: solid 5px navajowhite; width: 800px; display: block; margin: 20px 200px auto auto">
-    <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'Tab1')">by Date</button>
-        <button class="tablinks" onclick="openTab(event, 'Tab2')">by Month</button>
-        <button class="tablinks" onclick="openTab(event, 'Tab3')" id="defaultOpen">by Year</button>
-    </div>
-
-    <!-- Tab content -->
-    <div id="Tab1" class="tabcontent">
-        <iframe src="https://en.wikipedia.org" width="775px" height="900px" id="iframedate"></iframe>
-    </div>
-
-    <div id="Tab2" class="tabcontent">
-        <iframe src="https://en.wikipedia.org" width="775px" height="900px" id="iframemonth"></iframe>
-    </div>
-
-    <div id="Tab3" class="tabcontent">
-        <iframe src="https://en.wikipedia.org" width="775px" height="900px" id="iframeyear"></iframe>
-    </div>
+    <div class="tab"><button class="tablinks" onclick="openTab(event, 'Tab1')">by Date</button><button class="tablinks" onclick="openTab(event, 'Tab2')">by Month</button><button class="tablinks" onclick="openTab(event, 'Tab3')" id="defaultOpen">by Year</button></div>
+    <div id="Tab1" class="tabcontent"><iframe src="https://en.wikipedia.org" width="775px" height="900px" id="iframedate"></iframe></div>
+    <div id="Tab2" class="tabcontent"><iframe src="https://en.wikipedia.org" width="775px" height="900px" id="iframemonth"></iframe></div>
+    <div id="Tab3" class="tabcontent"><iframe src="https://en.wikipedia.org" width="775px" height="900px" id="iframeyear"></iframe></div>
 </div>
-
 </body>
 </html>
